@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_tracker/screens/login_Reg/registration.dart';
+import 'package:health_tracker/screens/main_pages/hidden_drawer.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -28,7 +30,7 @@ class Login extends StatelessWidget {
                           image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(
-                                "images/login.gif"
+                                "images/Doctor's office.gif"
                             ),
                           ),
                         ),
@@ -91,19 +93,28 @@ class Login extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
-                  child: Container(
-                    padding: EdgeInsets.all(20.h),
-                    decoration: BoxDecoration(
-                      color: Colors.deepOrange,
-                      borderRadius: BorderRadius.circular(12.h),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Sign In",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.h,
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context,
+                        MaterialPageRoute(builder:
+                            (context)=>HiddenDrawer(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(20.h),
+                      decoration: BoxDecoration(
+                        color: Colors.deepOrange,
+                        borderRadius: BorderRadius.circular(12.h),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Sign In",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.h,
+                          ),
                         ),
                       ),
                     ),
@@ -118,10 +129,19 @@ class Login extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Text(" Register now",
-                      style: TextStyle(
-                        color: Colors.orange,
-                        fontWeight: FontWeight.bold,
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(builder:
+                              (context)=>Register(),
+                          ),
+                        );
+                      },
+                      child: Text(" Register now",
+                        style: TextStyle(
+                          color: Colors.orange,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],

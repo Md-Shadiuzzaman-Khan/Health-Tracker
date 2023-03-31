@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/material/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_tracker/screens/login_Reg/login.dart';
 import 'package:health_tracker/screens/welcome%20pages/page_one.dart';
 import 'package:health_tracker/screens/welcome%20pages/page_three.dart';
 import 'package:health_tracker/screens/welcome%20pages/page_two.dart';
-import 'package:health_tracker/utils/app_layout.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../login_Reg/login.dart';
 
 class WelcomeScreens extends StatelessWidget {
   WelcomeScreens({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class WelcomeScreens extends StatelessWidget {
         children: [
           // page view
           SizedBox(
-            height: AppLayout.getHeight(500),
+            height: 510.h,
             child: PageView(
               controller: _controller,
               children: const [
@@ -40,11 +40,11 @@ class WelcomeScreens extends StatelessWidget {
             effect: JumpingDotEffect(
               activeDotColor: Colors.deepOrange,
               dotColor: Colors.grey,
-              dotHeight: AppLayout.getHeight(20),
-              dotWidth: AppLayout.getWidth(20),
-              spacing: AppLayout.getWidth(20),
-              verticalOffset: AppLayout.getHeight(50),
-              jumpScale: AppLayout.getHeight(5),
+              dotHeight: 20.h,
+              dotWidth: 20.w,
+              spacing: 20.w,
+              verticalOffset: 50.h,
+              jumpScale: 5.h,
             ),
           ),
         ],

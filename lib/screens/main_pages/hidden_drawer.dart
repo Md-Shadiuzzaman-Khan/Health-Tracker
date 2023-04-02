@@ -103,16 +103,18 @@ class _HiddenDrawerState extends State<HiddenDrawer> {
   }
   Widget build(BuildContext context) {
     return HiddenDrawerMenu(
+      isTitleCentered: true,
+      isDraggable: true,
       backgroundColorAppBar: Colors.deepOrange,
       backgroundMenu: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(
-                          "images/Doctor Cartoon GIF - Vector Characters.gif"
+                          "images/Doctor's office.gif"
                       ),
       ),
-      backgroundColorMenu: Colors.orange,
+      backgroundColorMenu: Colors.white,
       screens: _pages,
-      initPositionSelected: 0,
+      initPositionSelected: 1,
       enableShadowItensMenu: false,
       enableCornerAnimation: true,
       enableScaleAnimation: true,

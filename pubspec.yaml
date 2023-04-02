@@ -39,6 +39,7 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   flutter_screenutil: ^5.7.0
   hidden_drawer_menu: ^3.0.1
+  percent_indicator: ^4.0.0
   get:
 
 dev_dependencies:

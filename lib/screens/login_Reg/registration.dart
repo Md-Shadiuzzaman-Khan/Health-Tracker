@@ -30,7 +30,7 @@ class Register extends StatelessWidget {
                           image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(
-                                "images/login.gif"
+                                "images/Doc_.gif"
                             ),
                           ),
                         ),

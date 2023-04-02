@@ -30,7 +30,7 @@ class Login extends StatelessWidget {
                           image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(
-                                "images/Doctor's office.gif"
+                                "images/login.gif"
                             ),
                           ),
                         ),

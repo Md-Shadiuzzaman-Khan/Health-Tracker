@@ -40,7 +40,7 @@ class WelcomeScreens extends StatelessWidget {
             effect: JumpingDotEffect(
               activeDotColor: Colors.deepOrange,
               dotColor: Colors.grey,
-              dotHeight: 20.h,
+              dotHeight: 20.w,
               dotWidth: 20.w,
               spacing: 20.w,
               verticalOffset: 50.h,

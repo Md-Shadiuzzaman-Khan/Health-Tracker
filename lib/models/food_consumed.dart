@@ -5,6 +5,5 @@ class FoodConsumed {
   final String ? consumedAmount;
   final Widget ? icon;
   final Color ? boxColor;
-  final Image? image;
-  FoodConsumed({this.foodName, this.consumedAmount, this.icon, this.boxColor, this.image});
+  FoodConsumed({this.foodName, this.consumedAmount, this.icon, this.boxColor,});
 }

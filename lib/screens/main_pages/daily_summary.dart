@@ -2,46 +2,54 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import '../daily_summary_screens/daily_summary_details_body.dart';
 
 class DailySummary extends StatelessWidget {
   const DailySummary({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: AspectRatio(
-        aspectRatio: 1.6,
-        child: Container(
-          padding: EdgeInsets.all(18. w),
-          decoration: BoxDecoration(
-            color: Colors.deepOrange,
-            borderRadius: BorderRadius.circular(30.h),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _circleProgress(),
-              _macronutrients()
-            ],
+    return InkWell(
+          onTap: (){
+            Navigator.push(context,
+              MaterialPageRoute(builder:
+                  (context)=>DailySummaryDetailBody(),
+              ),
+            );
+          },
+        child: AspectRatio(
+          aspectRatio: 1.6,
+          child: Container(
+            padding: EdgeInsets.all(18.w),
+            decoration: BoxDecoration(
+              color: Colors.deepOrange,
+              borderRadius: BorderRadius.circular(30.h),
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _circleProgress(),
+                _macronutrients()
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
 Widget _circleProgress() {
   return SizedBox(
-    width: 160. w,
-    height: 160. w,
+    width: 160.w,
+    height: 160.w,
     child: Stack(
       children: [
         SizedBox(
-          width: 160. w,
-          height: 160. w,
+          width: 160.w,
+          height: 160.w,
           child: CircularProgressIndicator(
-            strokeWidth: 9. w,
+            strokeWidth: 9.w,
             value: 0.6,
             backgroundColor: Colors.orangeAccent,
             valueColor: AlwaysStoppedAnimation < Color > (Colors.white),
@@ -52,10 +60,10 @@ Widget _circleProgress() {
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            margin: EdgeInsets.all(13. w),
+            margin: EdgeInsets.all(13.w),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: Colors.orangeAccent, width: 9. w),
+              border: Border.all(color: Colors.orangeAccent, width: 9.w),
             ),
             child: Container(
               decoration: BoxDecoration(
@@ -63,7 +71,7 @@ Widget _circleProgress() {
                 color: Colors.orange,
               ),
               child: Container(
-                margin: EdgeInsets.all(22. w),
+                margin: EdgeInsets.all(22.w),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -75,10 +83,10 @@ Widget _circleProgress() {
                       ),
                     ),
                     Text(
-                      '1,112',
+                      '1112',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 22. sp,
+                          fontSize: 22.sp,
                           fontWeight: FontWeight.bold
                       ),
                     ),
@@ -86,7 +94,7 @@ Widget _circleProgress() {
                       'kcal',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 12. sp,
+                        fontSize: 12.sp,
                       ),
                     ),
                   ],

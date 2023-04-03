@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_tracker/screens/login_Reg/registration.dart';
-import 'package:health_tracker/screens/main_pages/hidden_drawer.dart';
+import '../main_pages/bottom_bar.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class Login extends StatelessWidget {
                           image: const DecorationImage(
                             fit: BoxFit.cover,
                             image: AssetImage(
-                                "images/login.gif"
+                                "images/Doctor's office.gif"
                             ),
                           ),
                         ),
@@ -97,7 +97,7 @@ class Login extends StatelessWidget {
                     onTap: (){
                       Navigator.push(context,
                         MaterialPageRoute(builder:
-                            (context)=>HiddenDrawer(),
+                            (context)=>Nav(),
                         ),
                       );
                     },

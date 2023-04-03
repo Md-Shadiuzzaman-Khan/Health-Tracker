@@ -26,14 +26,14 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                         strokeWidth: 4.w,
                         value: mealConsumed.progressValue! / 100,
                         backgroundColor: Colors.orangeAccent,
-                        valueColor: AlwaysStoppedAnimation < Color > (Colors.white),
+                        valueColor: AlwaysStoppedAnimation < Color > (Colors.green),
                       ),
                     ),
                     SizedBox(width: 20.w),
                     Text(
                       mealConsumed.mealName!,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.deepOrange,
                         fontWeight: FontWeight.bold,
                         fontSize: 16.sp,
                       ),
@@ -45,7 +45,7 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                     Text(
                       mealConsumed.mealAmount!,
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.orange,
                         fontWeight: FontWeight.bold,
                         fontSize: 16.sp,
                       ),
@@ -54,7 +54,7 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                     Text(
                       'kcal',
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Colors.orange,
                         fontWeight: FontWeight.bold,
                         fontSize: 12.sp,
                       ),
@@ -80,7 +80,7 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           VerticalDivider(
-                            color: Colors.grey,
+                            color: Colors.green,
                             thickness: 2,
                           ),
                           SizedBox(width: 15.w),
@@ -103,7 +103,7 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                               Text(
                                 mealConsumed.consumedFoods![index].foodName!,
                                 style: TextStyle(
-                                    color: Colors.grey,
+                                    color: Colors.deepOrange,
                                     fontSize: 15.sp,
                                     fontWeight: FontWeight.bold
                                 ),
@@ -112,9 +112,9 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                               Text(
                                 mealConsumed.consumedFoods![index].consumedAmount!,
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: Colors.orange,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 12. sp,
+                                  fontSize: 12.sp,
                                 ),
                               ),
                             ],

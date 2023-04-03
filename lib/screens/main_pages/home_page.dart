@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_tracker/screens/main_pages/appbar.dart';
 import 'package:health_tracker/screens/main_pages/daily_calorie_stat.dart';
 import 'package:health_tracker/screens/main_pages/meal_consumed.dart';
 
@@ -18,6 +19,7 @@ class Homepage extends StatelessWidget {
         child: ListView(
           physics: BouncingScrollPhysics(),
           children: const [
+            HomeScreenAppBar(),
             DailySummary(),
             DailyCalorieStat(),
             MealConsumed(),

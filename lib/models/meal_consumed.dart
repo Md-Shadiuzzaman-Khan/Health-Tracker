@@ -1,4 +1,4 @@
-
+import 'dart:ui';
 import 'food_consumed.dart';
 
 class MealConsumed {
@@ -6,5 +6,6 @@ class MealConsumed {
   final String ? mealName;
   final String ? mealAmount;
   final double ? progressValue;
-  MealConsumed({this.consumedFoods,this.mealName,this.mealAmount,this.progressValue});
+  final Color ? textColor;
+  MealConsumed({this.consumedFoods,this.mealName,this.mealAmount,this.progressValue,this.textColor});
 }

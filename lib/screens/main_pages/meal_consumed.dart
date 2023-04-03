@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../models/food_consumed.dart';
 import 'package:health_tracker/models/model.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MealConsumed extends StatefulWidget {
   const MealConsumed({Key? key}) : super(key: key);
@@ -108,7 +109,7 @@ class _MealConsumedState extends State<MealConsumed> {
                               width: 54.w,
                               decoration: BoxDecoration(
                                   color: consumedFoods[index].boxColor,
-                                  borderRadius: BorderRadius.circular(20)
+                                  borderRadius: BorderRadius.circular(20.w)
                               ),
                               child: Center(
                                   child: consumedFoods[index].icon
@@ -157,8 +158,8 @@ class _MealConsumedState extends State<MealConsumed> {
           foodName: 'Coffee',
           consumedAmount: '30 ml',
           boxColor: Colors.white,
-          image: Image.asset(
-              "images/",
+          icon: SvgPicture.asset(
+              'images/coffee.svg',
               width: 25.w,
               height: 25.w
           ),
@@ -170,8 +171,8 @@ class _MealConsumedState extends State<MealConsumed> {
           foodName: 'Bread',
           consumedAmount: '100 gm',
           boxColor: Colors.white,
-          image: Image.asset(
-              "images/",
+          icon: SvgPicture.asset(
+              'images/bread.svg',
               width: 25.w,
               height: 25.w
           ),

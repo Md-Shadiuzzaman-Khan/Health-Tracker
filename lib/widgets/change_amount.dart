@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_tracker/screens/main_pages/home_page.dart';
 
 class ChangeAmount extends StatefulWidget {
   const ChangeAmount({
@@ -101,12 +102,21 @@ class _ChangeAmountState extends State < ChangeAmount > {
                 borderRadius: BorderRadius.circular(20.w)
             ),
             child: Center(
-              child: Text(
-                'Apply',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.bold
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                    MaterialPageRoute(builder:
+                        (context)=>Homepage(),
+                    ),
+                  );
+                },
+                child: Text(
+                  'Apply',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.bold
+                  ),
                 ),
               ),
             ),

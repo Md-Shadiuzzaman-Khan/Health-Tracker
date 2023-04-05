@@ -22,7 +22,7 @@ class Page2 extends StatelessWidget {
                   image: const DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
-                        "images/Racetrack Runner.gif"
+                        "images/Nike runner.gif"
                     ),
                   ),
                 ),

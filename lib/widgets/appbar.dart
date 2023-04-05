@@ -68,7 +68,7 @@ class AddFoodScreenAppBar extends StatelessWidget {
                     ),
                     child: Center(
                       child: FaIcon(
-                        FontAwesomeIcons.barcode,
+                        FontAwesomeIcons.calendar,
                         size: 20.sp,
                         color: Colors.white,
                       ),

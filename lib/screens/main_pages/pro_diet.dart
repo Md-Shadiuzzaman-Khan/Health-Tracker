@@ -8,7 +8,6 @@ class ProDiet extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       body: Column(
-
       ),
     );
   }

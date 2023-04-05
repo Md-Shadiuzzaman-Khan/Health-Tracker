@@ -23,7 +23,7 @@ class Date extends StatelessWidget {
             ),
             SizedBox(height: 7.w),
             Text(
-              'Wed, 18 Aug',
+              'Tue, 4 April',
               style: TextStyle(
                   color: Colors.deepOrange,
                   fontSize: 24. sp,

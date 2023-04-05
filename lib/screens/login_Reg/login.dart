@@ -147,6 +147,12 @@ class Login extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 5.h),
+                Text("Forgot Password?",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green
+                  ),
+                ),
               ],
             ),
           ),

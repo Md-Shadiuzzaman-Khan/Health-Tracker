@@ -14,22 +14,22 @@ class DailySummaryDetailScreenAppBar extends StatelessWidget {
         Navigator.pop(context);
       },
       child: Container(
-        height: 100.w,
+        height: 80.w,
         color: Colors.transparent,
         child: Row(
           children: [
             Container(
-                height: 50.w,
-                width: 50.w,
+                height: 40.w,
+                width: 40.w,
                 decoration: BoxDecoration(
                     color: Colors.deepOrange,
-                    borderRadius: BorderRadius.circular(15)
+                    borderRadius: BorderRadius.circular(15.w)
                 ),
                 child: Center(
                     child: Icon(
                       Icons.arrow_back,
                       color: Colors.white,
-                      size: 25.sp,
+                      size: 20.sp,
                     )
                 )
             ),

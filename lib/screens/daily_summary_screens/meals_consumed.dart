@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:health_tracker/screens/daily_summary_screens/remaining_calorie.dart';
 import '../../models/food_consumed.dart';
 import '../../models/meal_consumed.dart';
 import 'package:health_tracker/utils/meal_consumed_tile.dart';
@@ -50,7 +51,7 @@ class _MealsConsumedState extends State < MealsConsumed > {
               FoodConsumed(
                 foodName: 'coffee',
                 consumedAmount: '30 ml',
-                boxColor: Colors.orange[100],
+                boxColor: Colors.white,
                 icon: SvgPicture.asset(
                     'images/coffee.svg',
                     width: 25.w,
@@ -60,7 +61,7 @@ class _MealsConsumedState extends State < MealsConsumed > {
               FoodConsumed(
                 foodName: 'Bread',
                 consumedAmount: '100 gm',
-                boxColor: Colors.orange[100],
+                boxColor: Colors.white,
                 icon: SvgPicture.asset(
                     'images/bread.svg',
                     width: 25.w,
@@ -80,7 +81,7 @@ class _MealsConsumedState extends State < MealsConsumed > {
               FoodConsumed(
                 foodName: 'Chicken',
                 consumedAmount: '200 gm',
-                boxColor: Colors.orange[100],
+                boxColor: Colors.white,
                 icon: SvgPicture.asset(
                     'images/chicken.svg',
                     width: 25.w,
@@ -90,15 +91,15 @@ class _MealsConsumedState extends State < MealsConsumed > {
               FoodConsumed(
                 foodName: 'Green salad',
                 consumedAmount: '100 gm',
-                boxColor: Colors.orange[100],
+                boxColor: Colors.white,
                 icon: SvgPicture.asset(
                     'images/salad.svg',
                     width: 25.w,
                     height: 25.w
                 ),
-              )
-            ]
-        )
+              ),
+            ],
+        ),
     );
 
     mealsConsumed.add(
@@ -106,12 +107,12 @@ class _MealsConsumedState extends State < MealsConsumed > {
             mealAmount: '650',
             mealName: 'Dinner',
             progressValue: 30,
-            textColor: Colors.deepOrange,
+            textColor: Colors.white,
             consumedFoods: [
               FoodConsumed(
                 foodName: 'Pasta & Sauce',
                 consumedAmount: '150 g',
-                boxColor: Colors.orange[100],
+                boxColor: Colors.white,
                 icon: SvgPicture.asset(
                     'images/pasta.svg',
                     width: 25.w,

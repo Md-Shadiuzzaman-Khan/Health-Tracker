@@ -16,7 +16,7 @@ class AddFoodBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[200],
       body: Container(
         margin: EdgeInsets.only(right: 15.w, left: 15.w),
         child: ListView(

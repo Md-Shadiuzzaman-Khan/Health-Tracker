@@ -11,8 +11,8 @@ Widget statisticsTile({ Color ? progressColor, String ? title, FaIcon ? icon, do
     child: Container(
       padding: EdgeInsets.all(20.h),
       decoration: BoxDecoration(
-          color: Colors.transparent,
-          border: Border.all(color: Colors.deepOrange),
+          color: Colors.white,
+          border: Border.all(color: Colors.white),
           borderRadius: BorderRadius.circular(25.h)
       ),
       child: Column(

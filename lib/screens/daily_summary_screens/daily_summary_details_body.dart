@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_tracker/screens/daily_summary_screens/remaining_calorie.dart';
 import 'app_bar.dart';
-import 'date.dart';
 import 'meals_consumed.dart';
 
 class DailySummaryDetailBody extends StatefulWidget {
@@ -26,9 +25,8 @@ class _DailySummaryDetailBodyState extends State < DailySummaryDetailBody > {
           physics: BouncingScrollPhysics(),
           children: const [
             DailySummaryDetailScreenAppBar(),
-            Date(),
             MealsConsumed(),
-            RemainingCalorie(),
+            CalorieCheckAdd(),
           ],
         ),
       ),

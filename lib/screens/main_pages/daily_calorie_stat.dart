@@ -28,7 +28,7 @@ class DailyCalorieStat extends StatelessWidget {
             ),
             SizedBox(width: 15.w,),
             statisticsTile(
-                title: 'Burned',
+                title: 'Taken',
                 icon: FaIcon(
                   FontAwesomeIcons.fire,
                   color: Colors.red,

@@ -2,10 +2,26 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_tracker/screens/login_Reg/registration.dart';
+import '../../models/loginmodel.dart';
 import '../main_pages/bottom_bar.dart';
 
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<Login> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  void _login() async {
+    try {
+      final response = await login(_emailController.text, _passwordController.text);
+      // Do something with the response, such as storing user information or navigating to a new screen
+    } catch (e) {
+      // Handle any errors that may occur during login
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -149,8 +165,8 @@ class Login extends StatelessWidget {
                 SizedBox(height: 5.h),
                 Text("Forgot Password?",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green
                   ),
                 ),
               ],

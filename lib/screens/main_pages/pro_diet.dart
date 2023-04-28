@@ -23,7 +23,7 @@ class ProDiet extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w400,
-                            color: Colors.deepOrange
+                            color: Colors.blueAccent
                         ),
                       ),
                       SizedBox(height: 30.h,),
@@ -40,7 +40,7 @@ class ProDiet extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepOrange,
+                                color: Colors.blueAccent,
                             ),
                           ),
                         ),
@@ -59,7 +59,7 @@ class ProDiet extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepOrange,
+                                color: Colors.blueAccent,
                             ),
                           ),
                         ),
@@ -78,7 +78,7 @@ class ProDiet extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepOrange
+                                color: Colors.blueAccent
                             ),
                           ),
                         ),
@@ -97,7 +97,7 @@ class ProDiet extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepOrange
+                                color: Colors.blueAccent
                             ),
                           ),
                         ),
@@ -108,7 +108,7 @@ class ProDiet extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 16.sp,
                               fontWeight: FontWeight.bold,
-                              color: Colors.deepOrange
+                              color: Colors.green
                           ),
                         ),
                       ),

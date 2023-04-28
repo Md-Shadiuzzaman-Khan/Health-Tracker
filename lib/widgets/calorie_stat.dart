@@ -28,7 +28,7 @@ class CalorieStatistics extends StatelessWidget {
                     title: 'Carb',
                     icon: FaIcon(
                       FontAwesomeIcons.pizzaSlice,
-                      color: Colors.deepOrange,
+                      color: Colors.blueAccent,
                     ),
                     progressColor: Colors.green,
                     unitName: 'grams',
@@ -50,7 +50,7 @@ class CalorieStatistics extends StatelessWidget {
                     title: 'Proteins',
                     icon: FaIcon(
                       FontAwesomeIcons.pizzaSlice,
-                      color: Colors.deepOrange,
+                      color: Colors.blueAccent,
                     ),
                     progressColor: Colors.green,
                     unitName: 'grams',
@@ -82,7 +82,7 @@ class CalorieStatistics extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(20.w),
         decoration: BoxDecoration(
-            color: Colors.deepOrange,
+            color: Colors.blueAccent,
             borderRadius: BorderRadius.circular(25.w)
         ),
         child: Column(
@@ -119,7 +119,7 @@ class CalorieStatistics extends StatelessWidget {
                     barRadius: Radius.circular(3.w),
                     progressColor: Colors.white,
                     padding: EdgeInsets.zero,
-                    backgroundColor: Colors.orangeAccent,
+                    backgroundColor: Colors.blue,
                   ),
                 ),
                 SizedBox(width: 20.w),

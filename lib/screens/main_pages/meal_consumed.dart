@@ -45,7 +45,7 @@ class _MealConsumedState extends State<MealConsumed> {
                         child: CircularProgressIndicator(
                           strokeWidth: 5.w,
                           value: 0.6,
-                          backgroundColor: Colors.orangeAccent,
+                          backgroundColor: Colors.blue,
                           valueColor: AlwaysStoppedAnimation < Color > (Colors.green),
                         ),
                       ),
@@ -53,7 +53,7 @@ class _MealConsumedState extends State<MealConsumed> {
                       Text(
                         'Breakfast',
                         style: TextStyle(
-                          color: Colors.deepOrange,
+                          color: Colors.blueAccent,
                           fontWeight: FontWeight.bold,
                           fontSize: 16.sp,
                         ),
@@ -65,7 +65,7 @@ class _MealConsumedState extends State<MealConsumed> {
                       Text(
                         '400',
                         style: TextStyle(
-                          color: Colors.deepOrange,
+                          color: Colors.blueAccent,
                           fontWeight: FontWeight.bold,
                           fontSize: 16.sp,
                         ),
@@ -74,7 +74,7 @@ class _MealConsumedState extends State<MealConsumed> {
                       Text(
                         'kcal',
                         style: TextStyle(
-                          color: Colors.deepOrange,
+                          color: Colors.blueAccent,
                           fontWeight: FontWeight.bold,
                           fontSize: 12.sp,
                         ),
@@ -100,7 +100,7 @@ class _MealConsumedState extends State<MealConsumed> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             VerticalDivider(
-                              color: Colors.orange,
+                              color: Colors.blue,
                               thickness: 2,
                             ),
                             SizedBox(width: 15.w),
@@ -123,7 +123,7 @@ class _MealConsumedState extends State<MealConsumed> {
                                 Text(
                                   consumedFoods[index].foodName!,
                                   style: TextStyle(
-                                      color: Colors.deepOrange,
+                                      color: Colors.blueAccent,
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.bold
                                   ),
@@ -132,7 +132,7 @@ class _MealConsumedState extends State<MealConsumed> {
                                 Text(
                                   consumedFoods[index].consumedAmount!,
                                   style: TextStyle(
-                                    color: Colors.deepOrange,
+                                    color: Colors.blueAccent,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12.sp,
                                   ),

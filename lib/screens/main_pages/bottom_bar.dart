@@ -37,7 +37,7 @@ class _NavState extends State < Nav > {
       bottomNavigationBar: DotNavigationBar(
         currentIndex: _currentIndex,
         onTap: changePage,
-        dotIndicatorColor: _currentIndex == 0 ? Colors.green : Colors.green,
+        dotIndicatorColor: _currentIndex == 0 ? Colors.deepOrange : Colors.deepOrange,
         borderRadius: 0,
         backgroundColor: Colors.white,
         enablePaddingAnimation: true,
@@ -49,7 +49,7 @@ class _NavState extends State < Nav > {
                 FontAwesomeIcons.house,
                 size: 20.sp,
               ),
-              selectedColor: Colors.deepOrange,
+              selectedColor: Colors.blueAccent,
               unselectedColor: Colors.grey
           ),
           DotNavigationBarItem(
@@ -57,7 +57,7 @@ class _NavState extends State < Nav > {
                 FontAwesomeIcons.chartLine,
                 size: 20.sp,
               ),
-              selectedColor: Colors.deepOrange,
+              selectedColor: Colors.blueAccent,
               unselectedColor: Colors.grey,
           ),
           DotNavigationBarItem(
@@ -65,7 +65,7 @@ class _NavState extends State < Nav > {
                 FontAwesomeIcons.productHunt,
                 size: 20.sp,
               ),
-              selectedColor: Colors.deepOrange,
+              selectedColor: Colors.blueAccent,
               unselectedColor: Colors.grey,
           ),
           DotNavigationBarItem(
@@ -73,7 +73,7 @@ class _NavState extends State < Nav > {
                 FontAwesomeIcons.user,
                 size: 20.sp,
               ),
-              selectedColor: Colors.deepOrange,
+              selectedColor: Colors.blueAccent,
               unselectedColor: Colors.grey,
           ),
         ],

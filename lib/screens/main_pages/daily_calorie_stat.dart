@@ -22,7 +22,7 @@ class DailyCalorieStat extends StatelessWidget {
                   FontAwesomeIcons.pizzaSlice,
                   color: Colors.deepOrange,
                 ),
-                progressColor: Colors.orange[900],
+                progressColor: Colors.blue[900],
                 value: 500,
                 progressPercent: 0.4
             ),
@@ -33,7 +33,7 @@ class DailyCalorieStat extends StatelessWidget {
                   FontAwesomeIcons.fire,
                   color: Colors.red,
                 ),
-                progressColor: Colors.red[900],
+                progressColor: Colors.blue[900],
                 value: 700,
                 progressPercent: 0.7
             ),

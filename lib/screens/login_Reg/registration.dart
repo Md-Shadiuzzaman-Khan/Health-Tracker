@@ -1,11 +1,62 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:http/http.dart';
 
 import 'login.dart';
 
-class Register extends StatelessWidget {
+class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
+
+  @override
+  State<Register> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<Register> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
+
+  void register(String name, email , password, confirmPassword) async {
+    try{
+      Response response = await post(
+          Uri.parse('https://api.jobfid.com/api/register'),
+          body: {
+            'name' : name,
+            'email': email,
+            'password': password,
+            'confirmPassword' : confirmPassword,
+          }
+      );
+
+      if(response.statusCode == 200){
+        var data = jsonDecode(response.body.toString());
+        print(data['token']);
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => Login()),
+        );
+
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Sign Up Successful'),
+          duration: Duration(seconds: 2),
+          backgroundColor: Colors.green,
+        ));
+      }else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Sign Up Failed'),
+          duration: Duration(seconds: 2),
+          backgroundColor: Colors.redAccent,
+        ));
+      }
+    }catch(e){
+      print(e.toString());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,12 +106,13 @@ class Register extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
-                      border: Border.all(color: Colors.orangeAccent),
+                      border: Border.all(color: Colors.blue),
                       borderRadius: BorderRadius.circular(12.h),
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.w),
                       child: TextField(
+                        controller: nameController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Full Name",
@@ -75,12 +127,13 @@ class Register extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
-                      border: Border.all(color: Colors.orangeAccent),
+                      border: Border.all(color: Colors.blue),
                       borderRadius: BorderRadius.circular(12.h),
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.w),
                       child: TextField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Email",
@@ -95,12 +148,13 @@ class Register extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
-                      border: Border.all(color: Colors.orangeAccent),
+                      border: Border.all(color: Colors.blue),
                       borderRadius: BorderRadius.circular(12.h),
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.w),
                       child: TextField(
+                        controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -116,12 +170,13 @@ class Register extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
-                      border: Border.all(color: Colors.orangeAccent),
+                      border: Border.all(color: Colors.blue),
                       borderRadius: BorderRadius.circular(12.h),
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.w),
                       child: TextField(
+                        controller: confirmPasswordController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -134,23 +189,19 @@ class Register extends StatelessWidget {
                 SizedBox(height: 10.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
-                  child: InkWell(
-                    onTap: (){
-                      Navigator.push(context,
-                        MaterialPageRoute(builder:
-                            (context)=>Login(),
-                        ),
-                      );
+                  child: GestureDetector(
+                    onTap: () {
+                      register(nameController.text.toString(), emailController.text.toString(), passwordController.text.toString(), confirmPasswordController.text.toString());
                     },
                     child: Container(
                       padding: EdgeInsets.all(20.h),
                       decoration: BoxDecoration(
-                        color: Colors.deepOrange,
+                        color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(12.h),
                       ),
                       child: Center(
                         child: Text(
-                          "Sign Up",
+                          "SIGN UP",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -180,7 +231,7 @@ class Register extends StatelessWidget {
                       },
                       child: Text(" Login",
                         style: TextStyle(
-                          color: Colors.orange,
+                          color: Colors.green,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -196,3 +247,4 @@ class Register extends StatelessWidget {
     );
   }
 }
+

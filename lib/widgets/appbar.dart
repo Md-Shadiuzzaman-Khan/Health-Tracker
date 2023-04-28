@@ -27,7 +27,7 @@ class AddFoodScreenAppBar extends StatelessWidget {
                     height: 50.w,
                     width: 50.w,
                     decoration: BoxDecoration(
-                        color: Colors.deepOrange,
+                        color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(15.w)
                     ),
                     child: Center(
@@ -45,7 +45,7 @@ class AddFoodScreenAppBar extends StatelessWidget {
         Text(
           'Add new food',
           style: TextStyle(
-              color: Colors.deepOrange,
+              color: Colors.blueAccent,
               fontSize: 18.sp,
               fontWeight: FontWeight.bold
           ),
@@ -63,7 +63,7 @@ class AddFoodScreenAppBar extends StatelessWidget {
                     height: 50.w,
                     width: 50.w,
                     decoration: BoxDecoration(
-                        color: Colors.deepOrange,
+                        color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(15.w)
                     ),
                     child: Center(

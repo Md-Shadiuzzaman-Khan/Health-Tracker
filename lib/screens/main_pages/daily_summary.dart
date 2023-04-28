@@ -22,7 +22,7 @@ class DailySummary extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.all(18.w),
             decoration: BoxDecoration(
-              color: Colors.deepOrange,
+              color: Colors.blue[700],
               borderRadius: BorderRadius.circular(30.h),
             ),
             child: Row(
@@ -51,7 +51,7 @@ Widget _circleProgress() {
           child: CircularProgressIndicator(
             strokeWidth: 9.w,
             value: 0.6,
-            backgroundColor: Colors.orangeAccent,
+            backgroundColor: Colors.blue[300],
             valueColor: AlwaysStoppedAnimation < Color > (Colors.white),
           ),
         ),
@@ -63,12 +63,12 @@ Widget _circleProgress() {
             margin: EdgeInsets.all(13.w),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              border: Border.all(color: Colors.orangeAccent, width: 9.w),
+              border: Border.all(color: Colors.blue, width: 9.w),
             ),
             child: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.orange,
+                color: Colors.blue,
               ),
               child: Container(
                 margin: EdgeInsets.all(22.w),
@@ -147,7 +147,7 @@ Widget _macronutrientsTile({
           barRadius: Radius.circular(3.w),
           progressColor: Colors.white,
           padding: EdgeInsets.zero,
-          backgroundColor: Colors.orangeAccent,
+          backgroundColor: Colors.blue[300],
         ),
         Text(
           amountInGram!,

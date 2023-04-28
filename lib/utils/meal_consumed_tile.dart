@@ -25,15 +25,15 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                       child: CircularProgressIndicator(
                         strokeWidth: 4.w,
                         value: mealConsumed.progressValue! / 100,
-                        backgroundColor: Colors.orangeAccent,
-                        valueColor: AlwaysStoppedAnimation < Color > (Colors.green),
+                        backgroundColor: Colors.blue[300],
+                        valueColor: AlwaysStoppedAnimation < Color > (Colors.deepOrange),
                       ),
                     ),
                     SizedBox(width: 20.w),
                     Text(
                       mealConsumed.mealName!,
                       style: TextStyle(
-                        color: Colors.deepOrange,
+                        color: Colors.blueAccent,
                         fontWeight: FontWeight.bold,
                         fontSize: 16.sp,
                       ),
@@ -45,7 +45,7 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                     Text(
                       mealConsumed.mealAmount!,
                       style: TextStyle(
-                        color: Colors.orange,
+                        color: Colors.blue,
                         fontWeight: FontWeight.bold,
                         fontSize: 16.sp,
                       ),
@@ -54,7 +54,7 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                     Text(
                       'kcal',
                       style: TextStyle(
-                        color: Colors.orange,
+                        color: Colors.blue,
                         fontWeight: FontWeight.bold,
                         fontSize: 12.sp,
                       ),
@@ -112,7 +112,7 @@ Widget mealConsumedTile(MealConsumed mealConsumed) {
                               Text(
                                 mealConsumed.consumedFoods![index].consumedAmount!,
                                 style: TextStyle(
-                                  color: Colors.orange,
+                                  color: Colors.blue,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12.sp,
                                 ),

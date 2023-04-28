@@ -29,7 +29,7 @@ class _ChangeAmountState extends State < ChangeAmount > {
             width: 140.w,
             padding: EdgeInsets.all(7.w),
             decoration: BoxDecoration(
-                color: Colors.deepOrange,
+                color: Colors.blueAccent,
                 borderRadius: BorderRadius.circular(20.w)
             ),
             child: Row(
@@ -51,7 +51,7 @@ class _ChangeAmountState extends State < ChangeAmount > {
                       children: [
                         Icon(
                           Icons.minimize,
-                          color: Colors.deepOrange,
+                          color: Colors.blueAccent,
                           size: 25.sp,
                         ),
                       ],
@@ -83,7 +83,7 @@ class _ChangeAmountState extends State < ChangeAmount > {
                       children: [
                         Icon(
                           Icons.add,
-                          color: Colors.deepOrange,
+                          color: Colors.blueAccent,
                           size: 20. sp,
                         ),
                       ],
@@ -98,7 +98,7 @@ class _ChangeAmountState extends State < ChangeAmount > {
             width: 140.w,
             padding: EdgeInsets.all(7.w),
             decoration: BoxDecoration(
-                color: Colors.deepOrange,
+                color: Colors.blueAccent,
                 borderRadius: BorderRadius.circular(20.w)
             ),
             child: Center(

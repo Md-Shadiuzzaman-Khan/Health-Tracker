@@ -38,7 +38,7 @@ class WelcomeScreens extends StatelessWidget {
             controller: _controller,
             count: 3,
             effect: JumpingDotEffect(
-              activeDotColor: Colors.deepOrange,
+              activeDotColor: Colors.blueAccent,
               dotColor: Colors.grey,
               dotHeight: 20.w,
               dotWidth: 20.w,
@@ -59,7 +59,7 @@ class WelcomeScreens extends StatelessWidget {
             ),
           );
         },
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.blueAccent,
         child: Icon(Icons.arrow_forward_rounded),
       ),
     );

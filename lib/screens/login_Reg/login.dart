@@ -1,27 +1,62 @@
+import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_tracker/screens/login_Reg/registration.dart';
-import '../../models/loginmodel.dart';
+import 'package:http/http.dart';
 import '../main_pages/bottom_bar.dart';
+
 
 class Login extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginScreenState extends State<Login> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+class _LoginPageState extends State<Login> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
-  void _login() async {
-    try {
-      final response = await login(_emailController.text, _passwordController.text);
-      // Do something with the response, such as storing user information or navigating to a new screen
-    } catch (e) {
-      // Handle any errors that may occur during login
+  void login(String email , password) async {
+    try{
+      Response response = await post(
+          Uri.parse('https://api.jobfid.com/api/login'),
+          body: {
+            'email': email,
+            'password': password,
+          }
+      );
+
+      if(response.statusCode == 200){
+        var data = jsonDecode(response.body.toString());
+        print(data['token']);
+
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => Nav()),
+        );
+
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Login Successful'),
+          duration: Duration(seconds: 2),
+          backgroundColor: Colors.green,
+        ));
+      }else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Login Failed'),
+          duration: Duration(seconds: 2),
+          backgroundColor: Colors.redAccent,
+        ));
+      }
+    }catch(e){
+      print(e.toString());
     }
   }
+
+  @override
+  void initState(){
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -71,12 +106,13 @@ class _LoginScreenState extends State<Login> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
-                      border: Border.all(color: Colors.orangeAccent),
+                      border: Border.all(color: Colors.blue),
                       borderRadius: BorderRadius.circular(12.h),
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.w),
                       child: TextField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: "Email",
@@ -91,12 +127,13 @@ class _LoginScreenState extends State<Login> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey[100],
-                      border: Border.all(color: Colors.orangeAccent),
+                      border: Border.all(color: Colors.blue),
                       borderRadius: BorderRadius.circular(12.h),
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.w),
                       child: TextField(
+                        controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -109,23 +146,19 @@ class _LoginScreenState extends State<Login> {
                 SizedBox(height: 10.h),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
-                  child: InkWell(
-                    onTap: (){
-                      Navigator.push(context,
-                        MaterialPageRoute(builder:
-                            (context)=>Nav(),
-                        ),
-                      );
+                  child: GestureDetector(
+                    onTap: () {
+                      login(emailController.text.toString(), passwordController.text.toString());
                     },
                     child: Container(
                       padding: EdgeInsets.all(20.h),
                       decoration: BoxDecoration(
-                        color: Colors.deepOrange,
+                        color: Colors.blueAccent,
                         borderRadius: BorderRadius.circular(12.h),
                       ),
                       child: Center(
                         child: Text(
-                          "Sign In",
+                          "SIGN IN",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -155,7 +188,7 @@ class _LoginScreenState extends State<Login> {
                       },
                       child: Text(" Register now",
                         style: TextStyle(
-                          color: Colors.orange,
+                          color: Colors.green,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -166,7 +199,7 @@ class _LoginScreenState extends State<Login> {
                 Text("Forgot Password?",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.green
+                      color: Colors.blueGrey
                   ),
                 ),
               ],

@@ -23,7 +23,7 @@ class HomeScreenAppBar extends StatelessWidget {
                 Text(
                   'Today',
                   style: TextStyle(
-                      color: Colors.deepOrange,
+                      color: Colors.blueAccent,
                       fontSize: 14.sp,
                       fontWeight: FontWeight.bold
                   ),
@@ -32,7 +32,7 @@ class HomeScreenAppBar extends StatelessWidget {
                 Text(
                   'Tue, 4 April',
                   style: TextStyle(
-                      color: Colors.deepOrange,
+                      color: Colors.blueAccent,
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold
                   ),

@@ -22,7 +22,7 @@ class DailySummaryDetailScreenAppBar extends StatelessWidget {
                 height: 40.w,
                 width: 40.w,
                 decoration: BoxDecoration(
-                    color: Colors.deepOrange,
+                    color: Colors.blueAccent,
                     borderRadius: BorderRadius.circular(15.w)
                 ),
                 child: Center(

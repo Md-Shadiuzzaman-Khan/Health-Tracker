@@ -25,7 +25,7 @@ Widget statisticsTile({ Color ? progressColor, String ? title, FaIcon ? icon, do
               Text(
                 title!,
                 style: TextStyle(
-                    color: Colors.deepOrange,
+                    color: Colors.blueAccent,
                     fontWeight: FontWeight.bold,
                     fontSize: 18.sp
                 ),
@@ -46,7 +46,7 @@ Widget statisticsTile({ Color ? progressColor, String ? title, FaIcon ? icon, do
                   barRadius: Radius.circular(3.w),
                   progressColor: progressColor!,
                   padding: EdgeInsets.zero,
-                  backgroundColor: Colors.orangeAccent,
+                  backgroundColor: Colors.blue,
                 ),
               ),
               SizedBox(width: 20.w),
@@ -56,7 +56,7 @@ Widget statisticsTile({ Color ? progressColor, String ? title, FaIcon ? icon, do
                   Text(
                     value.toString(),
                     style: TextStyle(
-                        color: Colors.deepOrange,
+                        color: Colors.blueAccent,
                         fontSize: 20.sp,
                         fontWeight: FontWeight.bold
                     ),
@@ -65,7 +65,7 @@ Widget statisticsTile({ Color ? progressColor, String ? title, FaIcon ? icon, do
                   Text(
                     unitName ?? 'kcal',
                     style: TextStyle(
-                      color: Colors.deepOrange,
+                      color: Colors.blueAccent,
                       fontSize: 12.sp,
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:health_tracker/screens/main_pages/prouserdiet.dart';
 
 class ProDiet extends StatelessWidget {
   const ProDiet({Key? key}) : super(key: key);
@@ -15,100 +16,80 @@ class ProDiet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: 50.h,
+                ),
                 Padding(
-                  padding: EdgeInsets.all(20.w),
+                  padding: EdgeInsets.all(20.h),
                   child: Column(
                     children: [
-                      Text("C H O O S E  Y O U R \nP R O  P L A N 👉",
+                      Text(
+                        "Do you want to join our PRO Diet Plan ",
                         style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.blueAccent
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.blue,
                         ),
                       ),
-                      SizedBox(height: 30.h,),
-                      Container(
-                        height: 50.h,
-                        width: 500.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15.h),
+                      Text(
+                        "Unimeal? ",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green,
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 15.h, left: 90.w),
-                          child: Text("1 Month - 300 BDT",
-                            style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.blueAccent,
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      Text(
+                        "Our expertise Will guide you daily",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      Text(
+                        "Click on join and visit Unimeal",
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.green,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 25.w),
+                        child: InkWell(
+                          onTap: (){
+                            Navigator.push(context,
+                              MaterialPageRoute(builder:
+                                  (context)=>MyWebView2(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(20.h),
+                            decoration: BoxDecoration(
+                              color: Colors.blueAccent,
+                              borderRadius: BorderRadius.circular(12.h),
                             ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 15.h,),
-                      Container(
-                        height: 50.h,
-                        width: 500.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15.h),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 15.h, left: 90.w),
-                          child: Text("3 Month - 800 BDT",
-                            style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.blueAccent,
+                            child: Center(
+                              child: Text(
+                                "J O I N",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12.h,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 15.h,),
-                      Container(
-                        height: 50.h,
-                        width: 500.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15.h),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 15.h, left: 85.w),
-                          child: Text("6 Month - 1500 BDT",
-                            style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.blueAccent
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 15.h,),
-                      Container(
-                        height: 50.h,
-                        width: 500.h,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15.h),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 15.h, left: 80.w),
-                          child: Text("12 Month - 2500 BDT",
-                            style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.blueAccent
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 30.h,),
-                      Center(
-                        child: Text("Click on any plan and go to the payment page directly",
-                          style: TextStyle(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.green
                           ),
                         ),
                       ),

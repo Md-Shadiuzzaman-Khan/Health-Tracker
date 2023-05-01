@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class MyWebView extends StatefulWidget {
+class MyWebView2 extends StatefulWidget {
   @override
   _MyWebViewState createState() => _MyWebViewState();
 }
 
-class _MyWebViewState extends State<MyWebView> {
-  final String url = 'https://api.jobfid.com/calories-consumption-calculator';
+class _MyWebViewState extends State<MyWebView2> {
+  final String url = 'https://unimeal.com/';
   bool isLoading = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('PRO Diet Maker', style: TextStyle(color: Color(0xFF00574F)),),
+        backgroundColor: Color(0xFFFFF7DF),
+        iconTheme: IconThemeData(color: Color(0xFF00574F)), // Change the app bar color here
+      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -37,5 +42,3 @@ class _MyWebViewState extends State<MyWebView> {
     );
   }
 }
-
-

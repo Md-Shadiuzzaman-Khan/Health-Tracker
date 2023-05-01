@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../widgets/add_food_body.dart';
+import 'package:health_tracker/screens/main_pages/bottom_bar.dart';
 
 class CalorieCheckAdd extends StatelessWidget {
   const CalorieCheckAdd({
@@ -21,7 +21,7 @@ class CalorieCheckAdd extends StatelessWidget {
             onTap: (){
               Navigator.push(context,
                 MaterialPageRoute(builder:
-                    (context)=>AddFoodBody(),
+                    (context)=>Nav(),
                 ),
               );
             },

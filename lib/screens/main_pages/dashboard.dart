@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:health_tracker/screens/login_Reg/login.dart';
-import 'package:health_tracker/screens/main_pages/pro_diet.dart';
+import 'package:health_tracker/screens/main_pages/bmi.dart';
+import 'package:health_tracker/screens/main_pages/faq.dart';
+import 'package:health_tracker/screens/main_pages/free_user.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -50,36 +52,16 @@ class Dashboard extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15.h),
                   ),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 15.h, left: 20.w),
-                    child: Text("Calculate BMI",
-                      style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.blueAccent
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 8.h,),
-                Container(
-                  height: 50.h,
-                  width: 500.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15.h),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 15.h, left: 20.w),
-                    child: InkWell(
-                      onTap: (){
-                        Navigator.push(context,
-                          MaterialPageRoute(builder:
-                              (context)=>ProDiet(),
-                          ),
-                        );
-                      },
-                      child: Text("Be a Pro User",
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder:
+                          (context)=>BMICalculator()
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 15.h, left: 20.w),
+                      child: Text("Calculate BMI",
                         style: TextStyle(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w400,
@@ -99,11 +81,48 @@ class Dashboard extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsets.only(top: 15.h, left: 20.w),
-                    child: Text("FAQ",
-                      style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.blueAccent
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(context,
+                          MaterialPageRoute(builder:
+                              (context)=>MyWebView3(),
+                          ),
+                        );
+                      },
+                      child: Text("Free Users Diet",
+                        style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.blueAccent
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 8.h,),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context,
+                      MaterialPageRoute(builder:
+                          (context)=>Faqs(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 50.h,
+                    width: 500.h,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15.h),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 15.h, left: 20.w),
+                      child: Text("FAQ",
+                        style: TextStyle(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.blueAccent
+                        ),
                       ),
                     ),
                   ),

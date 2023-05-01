@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:health_tracker/screens/daily_summary_screens/remaining_calorie.dart';
 import '../../models/food_consumed.dart';
 import '../../models/meal_consumed.dart';
 import 'package:health_tracker/utils/meal_consumed_tile.dart';

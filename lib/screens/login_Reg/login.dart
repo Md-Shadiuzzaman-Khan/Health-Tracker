@@ -16,7 +16,7 @@ class _LoginPageState extends State<Login> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  void login(String email , password) async {
+  void login(String email, password) async {
     try{
       Response response = await post(
           Uri.parse('https://api.jobfid.com/api/login'),

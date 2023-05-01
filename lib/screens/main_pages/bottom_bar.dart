@@ -28,7 +28,7 @@ class _NavState extends State < Nav > {
       _currentIndex = index;
     });
   }
-  final pages = [Homepage(), FreeDiet(), ProDiet(), Dashboard()];
+  final pages = [Homepage(), NutritionCalculator(), ProDiet(), Dashboard()];
 
   @override
   Widget build(BuildContext context) {

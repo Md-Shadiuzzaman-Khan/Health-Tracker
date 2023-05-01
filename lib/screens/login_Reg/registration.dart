@@ -1,10 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart';
-
 import 'login.dart';
 
 class Register extends StatefulWidget {
@@ -20,7 +18,7 @@ class _RegisterState extends State<Register> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
 
-  void register(String name, email , password, confirmPassword) async {
+  void register(String name, email, password, password_confirmation) async {
     try{
       Response response = await post(
           Uri.parse('https://api.jobfid.com/api/register'),
@@ -28,7 +26,7 @@ class _RegisterState extends State<Register> {
             'name' : name,
             'email': email,
             'password': password,
-            'confirmPassword' : confirmPassword,
+            'password_confirmation' : password_confirmation,
           }
       );
 
@@ -56,6 +54,11 @@ class _RegisterState extends State<Register> {
     }catch(e){
       print(e.toString());
     }
+  }
+
+  @override
+  void initState(){
+    super.initState();
   }
 
   @override
@@ -191,7 +194,12 @@ class _RegisterState extends State<Register> {
                   padding: EdgeInsets.symmetric(horizontal: 25.w),
                   child: GestureDetector(
                     onTap: () {
-                      register(nameController.text.toString(), emailController.text.toString(), passwordController.text.toString(), confirmPasswordController.text.toString());
+                      register(
+                          nameController.text.toString(),
+                          emailController.text.toString(),
+                          passwordController.text.toString(),
+                          confirmPasswordController.text.toString(),
+                      );
                     },
                     child: Container(
                       padding: EdgeInsets.all(20.h),

@@ -52,25 +52,6 @@ class Dashboard extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: EdgeInsets.only(top: 15.h, left: 20.w),
-                    child: Text("Your Information",
-                        style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.blueAccent
-                    ),
-                ),
-                  ),
-                ),
-                SizedBox(height: 8.h,),
-                Container(
-                  height: 50.h,
-                  width: 500.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15.h),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 15.h, left: 20.w),
                     child: Text("Calculate BMI",
                       style: TextStyle(
                           fontSize: 16.sp,

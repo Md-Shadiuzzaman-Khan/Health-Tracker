@@ -95,6 +95,7 @@ class _LoginPageState extends State<Login> {
                 Text(
                   "Health Tracker",
                   style: TextStyle(
+                    color: Colors.blue,
                     fontSize: 36.sp,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Rajdhani',

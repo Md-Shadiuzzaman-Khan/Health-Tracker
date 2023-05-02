@@ -10,22 +10,21 @@ class NutritionCalculator extends StatefulWidget {
 }
 
 class _NutritionCalculatorState extends State<NutritionCalculator> {
-  String _meal = "breakfast";
-  String _foodName = "";
-  String _foodGrams = "";
+  String name = "breakfast";
+  String foodName = "";
+  String serving_size_g = "";
 
-  int _calories = 0;
-  int _carbs = 0;
-  int _fats = 0;
-  int _protein = 0;
+  int calories = 0;
+  int carbohydrates_total_g = 0;
+  int fat_total_g = 0;
+  int protein_g = 0;
 
   void _calculateNutrition() async {
-    if (_foodName.isEmpty || _foodGrams.isEmpty) {
+    if (foodName.isEmpty || serving_size_g.isEmpty) {
       return;
     }
 
-    final url =
-        "https://api.api-ninjas.com/v1/nutrition?query=$_meal $_foodGrams grams $_foodName";
+    final url = "https://api.api-ninjas.com/v1/nutrition?query=$name $serving_size_g grams $foodName";
     final headers = {"x-Api-Key": "I3sov+4Ec2CrXQK9mauAQQ==PzCNNH5swQ7U6yde"};
 
     final response = await http.get(Uri.parse(url), headers: headers);
@@ -34,112 +33,211 @@ class _NutritionCalculatorState extends State<NutritionCalculator> {
       final data = json.decode(response.body);
 
       setState(() {
-        _calories = data["calories"];
-        _carbs = data["carbs"];
-        _fats = data["fats"];
-        _protein = data["protein"];
+        calories = data["calories"]["value"].toInt();
+        carbohydrates_total_g = data["carbohydrates"]["value"].toInt();
+        fat_total_g = data["fat"]["value"].toInt();
+        protein_g = data["protein"]["value"].toInt();
       });
+
     } else {
       throw Exception("Failed to load nutrition data");
     }
   }
 
   @override
+  void initState(){
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Nutrition Calculator"),
-        ),
-        body: Padding(
-        padding: EdgeInsets.all(16.0.h),
+      backgroundColor: Colors.grey[200],
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(16.0.h),
           child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-          Text("Choose Meal:"),
-          DropdownButton(
-          value: _meal,
-          onChanged: (value) {
-          setState(() {
-          _meal = value!;
-          });
-          },
-          items: [
-          DropdownMenuItem(
-          value: "breakfast",
-          child: Text("Breakfast"),
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Choose Meal:", style: TextStyle(color: Colors.blue, fontSize: 20.sp, fontWeight: FontWeight.bold),),
+              DropdownButton(
+                value: name,
+                onChanged: (value) {
+                  setState(() {
+                    name = value!;
+                  });
+                },
+                items: [
+                  DropdownMenuItem(
+                    value: "breakfast",
+                    child: Text("Breakfast"),
+                  ),
+                  DropdownMenuItem(
+                    value: "lunch",
+                    child: Text("Lunch"),
+                  ),
+                  DropdownMenuItem(
+                    value: "dinner",
+                    child: Text("Dinner"),
+                  ),
+                  DropdownMenuItem(
+                    value: "snacks",
+                    child: Text("Snacks"),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: Colors.transparent),
+                    borderRadius: BorderRadius.circular(12.h),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20.w),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Enter food name",
+                          border: InputBorder.none
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          foodName = value;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: Colors.transparent),
+                    borderRadius: BorderRadius.circular(12.h),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 20.w),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: "Enter grams of food",
+                        border: InputBorder.none
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          serving_size_g = value;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 16),
+
+              ElevatedButton(
+                child: Text("Calculate"),
+                onPressed: _calculateNutrition,
+              ),
+
+              AspectRatio(
+                aspectRatio: 2,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(15.h),
+                      child: Container(
+                        padding: EdgeInsets.all(20.h),
+                        height: 118.h,
+                        width: 125.w,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.h),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Calories", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 18.sp),),
+                            Text("$calories", style: TextStyle(color: Colors.blue[900], fontWeight: FontWeight.bold, fontSize: 20.sp),),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(15.h),
+                      child: Container(
+                        padding: EdgeInsets.all(20.h),
+                        height: 118.h,
+                        width: 125.w,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.h),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Carbs", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 18.sp),),
+                            Text("$carbohydrates_total_g", style: TextStyle(color: Colors.blue[900], fontWeight: FontWeight.bold, fontSize: 20.sp),),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 16),
+              AspectRatio(
+                aspectRatio: 2,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.all(15.h),
+                      child: Container(
+                        padding: EdgeInsets.all(20.h),
+                        height: 118.h,
+                        width: 125.w,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.h),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Fats", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 18.sp),),
+                            Text("$fat_total_g", style: TextStyle(color: Colors.blue[900], fontWeight: FontWeight.bold, fontSize: 20.sp),),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(15.h),
+                      child: Container(
+                        padding: EdgeInsets.all(20.h),
+                        height: 118.h,
+                        width: 125.w,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.h),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Protein", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 18.sp),),
+                            Text("$protein_g", style: TextStyle(color: Colors.blue[900], fontWeight: FontWeight.bold, fontSize: 20.sp),),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          DropdownMenuItem(
-          value: "lunch",
-          child: Text("Lunch"),
-          ),
-          DropdownMenuItem(
-          value: "dinner",
-          child: Text("Dinner"),
-          ),
-          DropdownMenuItem(
-          value: "snacks",
-          child: Text("Snacks"),
-          ),
-          ],
-          ),
-          SizedBox(height: 16),
-          TextField(
-          decoration: InputDecoration(
-          hintText: "Enter food name",
-          ),
-          onChanged: (value) {
-          setState(() {
-          _foodName = value;
-          });
-          },
-          ),
-          SizedBox(height: 16),
-          TextField(
-          decoration: InputDecoration(
-          hintText: "Enter grams of food",
-          ),
-          onChanged: (value) {
-          setState(() {
-          _foodGrams = value;
-          });
-          },
-          ),
-          SizedBox(height: 16),
-          ElevatedButton(
-          onPressed: _calculateNutrition,
-          child: Text("Calculate"),
-          ),
-          SizedBox(height: 16),
-          Row(
-          children: [
-          Text("Calories: "),
-          Text("$_calories"),
-          ],
-          ),
-          SizedBox(height: 16),
-          Row(
-          children: [
-          Text("Carbs: "),
-          Text("$_carbs"),
-          ],
-          ),
-          SizedBox(height: 16),
-          Row(
-          children: [
-          Text("Fats: "),
-          Text("$_fats"),
-          ],
-          ),
-          SizedBox(height: 16),
-          Row(
-          children:[
-          Text("Protein: "),
-          Text("$_protein"),
-          ]
-          ),
-        ],
-         ),
         ),
+      ),
     );
   }
 }

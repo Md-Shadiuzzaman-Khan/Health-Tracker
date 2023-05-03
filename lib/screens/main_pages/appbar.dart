@@ -30,7 +30,7 @@ class HomeScreenAppBar extends StatelessWidget {
                 ),
                 SizedBox(height: 7.w),
                 Text(
-                  'Tue, 2 May',
+                  'Tue, 4 May',
                   style: TextStyle(
                       color: Colors.blueAccent,
                       fontSize: 16.sp,

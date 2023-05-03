@@ -26,17 +26,17 @@ class CalorieCheckAdd extends StatelessWidget {
               );
             },
             child: Container(
-                height: 40.w,
-                width: 40.w,
-                decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(50.w)
-                ),
-                child: Icon(
-                  Icons.add,
-                  color: Colors.white,
-                  size: 27.sp,
-                )
+                // height: 40.w,
+                // width: 40.w,
+                // decoration: BoxDecoration(
+                //     color: Colors.green,
+                //     borderRadius: BorderRadius.circular(50.w)
+                // ),
+                // child: Icon(
+                //   Icons.add,
+                //   color: Colors.white,
+                //   size: 27.sp,
+                // )
             ),
           )
         ],

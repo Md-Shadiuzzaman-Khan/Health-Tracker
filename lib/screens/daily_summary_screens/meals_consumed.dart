@@ -73,7 +73,7 @@ class _MealsConsumedState extends State < MealsConsumed > {
 
     mealsConsumed.add(
         MealConsumed(
-            mealAmount: '350',
+            mealAmount: '300',
             mealName: 'Lunch',
             progressValue: 70,
             consumedFoods: [
@@ -103,13 +103,13 @@ class _MealsConsumedState extends State < MealsConsumed > {
 
     mealsConsumed.add(
         MealConsumed(
-            mealAmount: '650',
+            mealAmount: '347',
             mealName: 'Dinner',
             progressValue: 30,
             textColor: Colors.white,
             consumedFoods: [
               FoodConsumed(
-                foodName: 'Pasta & Sauce',
+                foodName: 'Pasta',
                 consumedAmount: '150 g',
                 boxColor: Colors.white,
                 icon: SvgPicture.asset(
@@ -118,7 +118,17 @@ class _MealsConsumedState extends State < MealsConsumed > {
                     height: 25.w
                 ),
               ),
-            ]
+              FoodConsumed(
+                foodName: 'Egg',
+                consumedAmount: '147 g',
+                boxColor: Colors.white,
+                icon: SvgPicture.asset(
+                    'images/pasta.svg',
+                    width: 25.w,
+                    height: 25.w
+                ),
+              ),
+            ],
         )
     );
   }
